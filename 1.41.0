@@ -1,0 +1,34 @@
+Collecting Rust
+  Using cached https://files.pythonhosted.org/packages/c3/ff/1ffe5c38505fd5226e344aaf91fd43dc38648ccf79ae7096ea0fa4f7f815/RUST-0.1.1.tar.gz
+Collecting matplotlib (from Rust)
+  Using cached https://files.pythonhosted.org/packages/56/3f/0a1b147f23830ca027f9e93cb4985957dbef690649f249063718c6e5c19b/matplotlib-3.4.1-cp37-cp37m-win_amd64.whl
+Collecting biopython (from Rust)
+  Using cached https://files.pythonhosted.org/packages/9d/18/2db178ac5dafad788f694454b57da0aa887aa93e470ee4e41e0099361cb3/biopython-1.78-cp37-cp37m-win_amd64.whl
+Collecting pysam (from Rust)
+  Using cached https://files.pythonhosted.org/packages/99/5a/fc440eb5fffb5346e61a38b49991aa552e4b8b31e8493a101d2833ed1e19/pysam-0.16.0.1.tar.gz
+    Complete output from command python setup.py egg_info:
+    # pysam: no cython available - using pre-compiled C
+    # pysam: htslib mode is shared
+    # pysam: HTSLIB_CONFIGURE_OPTIONS=None
+    '.' is not recognized as an internal or external command,
+    operable program or batch file.
+    '.' is not recognized as an internal or external command,
+    operable program or batch file.
+    # pysam: htslib configure options: None
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "C:\Users\Johnatas\AppData\Local\Temp\pip-install-x2dhiw3b\pysam\setup.py", line 240, in <module>
+        htslib_make_options = run_make_print_config()
+      File "C:\Users\Johnatas\AppData\Local\Temp\pip-install-x2dhiw3b\pysam\setup.py", line 68, in run_make_print_config
+        stdout = subprocess.check_output(["make", "-s", "print-config"])
+      File "C:\Users\Johnatas\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 411, in check_output
+        **kwargs).stdout
+      File "C:\Users\Johnatas\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 488, in run
+        with Popen(*popenargs, **kwargs) as process:
+      File "C:\Users\Johnatas\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 800, in __init__
+        restore_signals, start_new_session)
+      File "C:\Users\Johnatas\AppData\Local\Programs\Python\Python37\lib\subprocess.py", line 1207, in _execute_child
+        startupinfo)
+    FileNotFoundError: [WinError 2] The system cannot find the file specified
+    
+    ----------------------------------------
