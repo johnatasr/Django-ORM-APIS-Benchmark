@@ -3,7 +3,7 @@ from django.db.models import (
     BooleanField,
     CharField,
     URLField,
-    DateTimeField )
+    DateTimeField)
 
 import json
 import django_main

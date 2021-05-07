@@ -1,0 +1,69 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: "postgres:alpine"
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+
+  django:
+    build:
+      dockerfile: django.Dockerfile
+      context: ./django_main
+    working_dir: /var/www/app
+    ports:
+      - "8000:8000"
+    environment:
+      IN_DOCKER: 1
+    depends_on:
+      - db
+  ninja:
+    build:
+      dockerfile: djangoNinja.Dockerfile
+      context: ./ninja_api
+    working_dir: /var/www/app
+    ports:
+      - "8001:8001"
+    environment:
+      IN_DOCKER: 1
+    depends_on:
+      - db
+
+  flask:
+    build:
+      dockerfile: flask.Dockerfile
+      context: ./flask_api
+    working_dir: /var/www/app
+    ports:
+      - "8002:8002"
+    environment:
+      IN_DOCKER: 1
+    depends_on:
+      - db
+      -
+  falcon:
+    build:
+      dockerfile: falcon.Dockerfile
+      context: ./falcon_api
+    working_dir: /var/www/app
+    ports:
+      - "8003:8003"
+    environment:
+      IN_DOCKER: 1
+    depends_on:
+      - db
+
+  fastapi:
+    build:
+      dockerfile: fastapi.Dockerfile
+      context: ./fastapi_api
+    working_dir: /var/www/app
+    ports:
+      - "8004:8004"
+    environment:
+      IN_DOCKER: 1
+    depends_on:
+      - db
